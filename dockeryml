@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+
+mysql:
+image: mysql:8.0
+container_name: mysql-db
+restart: always
+environment:
+MYSQL_ROOT_PASSWORD: 3564
+MYSQL_DATABASE: resume_db
+MYSQL_USER: root
+MYSQL_PASSWORD: 3564
+ports:
+- "3306:3306"
+volumes:
+- mysql_data:/var/lib/mysql
+networks:
+- resume-network
+
+backend:
+image: saikrishnaveeramachu2003/resume-screening-backend:latest
+container_name: resume-backend
+restart: always
+depends_on:
+- mysql
+ports:
+- "6002:6002"
+environment:
+SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/resume_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+SPRING_DATASOURCE_USERNAME: root
+SPRING_DATASOURCE_PASSWORD: 3564
+SPRING_JPA_HIBERNATE_DDL_AUTO: update
+networks:
+- resume-network
+
+frontend:
+image: saikrishnaveeramachu2003/resume-screening-frontend:latest
+container_name: resume-frontend
+restart: always
+depends_on:
+- backend
+ports:
+- "5173:5173"
+networks:
+- resume-network
+
+networks:
+resume-network:
+driver: bridge
+
+volumes:
+mysql_data:
