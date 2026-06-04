@@ -1,0 +1,4 @@
+Set fso = CreateObject("Scripting.FileSystemObject"
+Set file = fso.OpenTextFile("c:\Users\hp\OneDrive\Desktop\springai\Uploadsservices\src\main\java\com\example\demo\ResumeController.java", 1
+text = Replace(text, old, new
+Set file = fso.OpenTextFile("c:\Users\hp\OneDrive\Desktop\springai\Uploadsservices\src\main\java\com\example\demo\ResumeController.java", 2, True

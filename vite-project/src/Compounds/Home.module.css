@@ -1,0 +1,103 @@
+.homePage {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #f7f9fb;
+  color: #191c1e;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.homePage ::selection {
+  background: rgba(226, 223, 255, 1);
+  color: #0f0069;
+}
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.indigoGradientBg {
+  background: linear-gradient(135deg, #4f46e5 0%, #712ae2 100%);
+}
+
+.indigoGlow:hover {
+  box-shadow: 0 0 25px rgba(79, 70, 229, 0.3);
+}
+
+.textPrimary {
+  color: #3525cd;
+}
+
+.textSecondary {
+  color: #712ae2;
+}
+
+.textTertiary {
+  color: #684000;
+}
+
+.textOnSurface {
+  color: #191c1e;
+}
+
+.textOnSurfaceVariant {
+  color: #464555;
+}
+
+.textOnPrimary {
+  color: #ffffff;
+}
+
+.textOnPrimaryContainer {
+  color: #dad7ff;
+}
+
+.bgPrimaryContainer10 {
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+.borderPrimary20 {
+  border-color: rgba(79, 70, 229, 0.2);
+}
+
+.bgPrimary10 {
+  background-color: rgba(53, 37, 205, 0.1);
+}
+
+.bgSecondary10 {
+  background-color: rgba(113, 42, 226, 0.1);
+}
+
+.bgTertiary10 {
+  background-color: rgba(104, 64, 0, 0.1);
+}
+
+.bgSurfaceContainerLow {
+  background-color: #f2f4f6;
+}
+
+.bgSurfaceContainerLow50 {
+  background-color: rgba(242, 244, 246, 0.5);
+}
+
+.bgSurfaceContainer {
+  background-color: #eceef0;
+}
+
+.borderOutlineVariant20 {
+  border-color: rgba(199, 196, 216, 0.2);
+}
+
+.borderOutlineVariant30 {
+  border-color: rgba(199, 196, 216, 0.3);
+}
+
+.hoverSecondary:hover {
+  color: #712ae2;
+}
+
+.hoverTextPrimary:hover {
+  color: #3525cd;
+}

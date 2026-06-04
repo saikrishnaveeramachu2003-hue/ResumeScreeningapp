@@ -1,0 +1,29 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* Basic global styles */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  color: #191c1e;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.indigo-glow:focus-within {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #4f46e5;
+}
+
+.primary-gradient {
+  background: linear-gradient(135deg, #3525cd 0%, #712ae2 100%);
+}
