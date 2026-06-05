@@ -7,7 +7,7 @@ import Login from "./Compounds/Login";
 import SignIn from "./Compounds/SignIn";
 import AuthProvider from "./auth/AuthProvider";
 import ProtectedRoute from "./auth/ProtectedRoute";
-import CreateJob from "./Compounds/CreateJob";
+import CreateJob from "./Compounds/Createjob";
 import Uploadresume from "./Compounds/Uploadresume";
 import Allresumes from "./Compounds/Allresume";
 import Alljobs from "./Compounds/Alljobs";
