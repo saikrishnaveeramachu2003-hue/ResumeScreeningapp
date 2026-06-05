@@ -26,7 +26,7 @@ import com.example.demo.security.services.UserDetailsImpl;
 
 @RestController
 @RequestMapping("/api/jobs")
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "http://16.113.16.42:5173"})
 public class Jobcontroller {
 
     @Autowired

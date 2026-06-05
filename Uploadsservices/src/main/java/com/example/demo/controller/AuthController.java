@@ -34,7 +34,7 @@ import lombok.Setter;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "http://16.113.16.42:5173"})
 public class AuthController {
 
     @Autowired
