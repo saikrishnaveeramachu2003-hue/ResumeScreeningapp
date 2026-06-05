@@ -12,7 +12,7 @@ import Uploadresume from "./Compounds/Uploadresume";
 import Allresumes from "./Compounds/Allresume";
 import Alljobs from "./Compounds/Alljobs";
 import ApplyJob from "./Compounds/Applyjob";
-import All from "./Compounds/All";
+
 
 export default function App() {
   return (
