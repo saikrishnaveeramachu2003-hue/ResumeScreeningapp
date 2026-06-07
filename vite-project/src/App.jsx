@@ -36,7 +36,7 @@ export default function App() {
         <Route path="/upload-resume" element={<Uploadresume />} />
         <Route path="/all-resumes" element={<Allresumes />} />
         <Route path="/all-jobs" element={<Alljobs />} />
-        <Route path="/all" element={<All />} />
+       
         <Route path="/apply/:jobId" element={<ApplyJob />}/>
 
         {/* 404 Page - redirect unknown routes to Home */}
