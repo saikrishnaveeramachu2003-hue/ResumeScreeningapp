@@ -79,7 +79,11 @@ public class WebSecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                  .requestMatchers("/api/auth/**", "/auth/**", "/login/**", "/oauth2/**").permitAll()
-.requestMatchers("/api/result/**", "/api/results", "/api/delete/**").authenticated()
+.requestMatchers("/api/result/**", "/api/results")
+.permitAll()
+
+.requestMatchers("/api/delete/**")
+.authenticated()
                 .requestMatchers("/login/**", "/oauth2/**").permitAll()
                
                 .requestMatchers(
