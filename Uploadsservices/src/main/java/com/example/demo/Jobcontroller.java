@@ -131,15 +131,14 @@ public ResponseEntity<Map<String,Object>> createJob(
     Jobs savedJob =
             jobRepository.save(job);
 
-    String applyUrl =
-        "http://localhost:5173/apply/"
-        + savedJob.getId();
+   String applyLink =
+    "http://16.113.16.42:5173/apply/" + savedJob.getId();
 
     Map<String,Object> response =
             new HashMap<>();
 
     response.put("job", savedJob);
-    response.put("applyUrl", applyUrl);
+    response.put("applyUrl", applyLink);
 
     return ResponseEntity.ok(response);
 }
