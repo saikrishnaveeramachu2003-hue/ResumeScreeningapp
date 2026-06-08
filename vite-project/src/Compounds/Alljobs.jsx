@@ -216,7 +216,7 @@ export default function AllJobs() {
     className="btn btn-success btn-sm me-2"
     onClick={() =>
       navigator.clipboard.writeText(
-        `http://localhost:5173/apply/${job.id}`
+        `/api/jobs/apply/${job.id}`
       )
     }
   >
@@ -227,7 +227,7 @@ export default function AllJobs() {
     className="btn btn-primary btn-sm"
     onClick={() =>
       window.open(
-        `http://localhost:5173/apply/${job.id}`,
+        `/api/jobs/apply/${job.id}`,
         "_blank"
       )
     }
