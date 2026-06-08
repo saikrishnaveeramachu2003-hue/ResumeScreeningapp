@@ -9,6 +9,7 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,7 +29,8 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 @EnableKafka
 public class KafkaConfig {
 
-    // ================= PRODUCER =================
+    @Value("${spring.kafka.bootstrap-servers}")
+    private String bootstrapServers;
 
     @Bean
     public ProducerFactory<String, ResumeModel> producerFactory() {
@@ -37,7 +39,7 @@ public class KafkaConfig {
 
         props.put(
                 ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
-                "localhost:9092"
+                bootstrapServers
         );
 
         props.put(
@@ -58,8 +60,6 @@ public class KafkaConfig {
         return new KafkaTemplate<>(producerFactory());
     }
 
-    // ================= CONSUMER =================
-
     @Bean
     public ConsumerFactory<String, ResumeModel> consumerFactory() {
 
@@ -72,7 +72,7 @@ public class KafkaConfig {
 
         props.put(
                 ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
-                "localhost:9092"
+                bootstrapServers
         );
 
         props.put(
@@ -80,7 +80,6 @@ public class KafkaConfig {
                 "resume-group"
         );
 
-        // Read only new messages
         props.put(
                 ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,
                 "latest"
@@ -101,20 +100,14 @@ public class KafkaConfig {
                 new ConcurrentKafkaListenerContainerFactory<>();
 
         factory.setConsumerFactory(consumerFactory());
-
-        // Process multiple resumes in parallel
         factory.setConcurrency(3);
 
         return factory;
     }
 
-    // ================= TOPIC =================
-
     @Bean
     public NewTopic resumeTopic() {
-
         return TopicBuilder.name("resume-topic")
-                // 3 partitions for parallel processing
                 .partitions(3)
                 .replicas(1)
                 .build();
